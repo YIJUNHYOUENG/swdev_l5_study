@@ -274,6 +274,14 @@ export default function ExamStudyApp() {
           font-size: 18px;
         }
 
+        .lightgreen {
+          background-color: rgba(160, 218, 25, 1);
+        }
+
+        .skyblue {
+          background-color: rgba(41, 200, 206, 1);
+        }
+
         .list-avatar.exam {
           background-color: #f97316;
         }
@@ -579,7 +587,7 @@ function StudyMaterialScreen({ navigate }) {
             onClick={() => navigate(material.navigate)}
           >
             <div className="list-item-left">
-              <div className="list-avatar">{material.id}</div>
+              <div className={material.id <= 4 ? "list-avatar skyblue" : "list-avatar lightgreen"}>{material.id}</div>
               <div className="list-info">
                 <h3>{material.title}</h3>
                 <p>{material.description}</p>
