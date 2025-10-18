@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, Book, FileQuestion, Plus, ChevronRight, ArrowLeft, BookOpen, CheckCircle } from 'lucide-react';
+import { Home, Book, FileQuestion, ChevronRight, ArrowLeft } from 'lucide-react';
 
 // 메인 App 컴포넌트
 export default function ExamStudyApp() {
@@ -25,6 +25,18 @@ export default function ExamStudyApp() {
         return <ApplicationTestScreen navigate={navigate}/>
       case 'buildsw':
         return <BuildSoftworeDevScreen navigate={navigate}/>
+      case 'datainput':
+        return <DataInputScreen navigate={navigate} />
+      case 'sqlapp':
+        return <SqlApplicationScreen navigate={navigate} />
+      case 'implement':
+        return <ImplementScreen navigate={navigate} />
+      case 'interfaceimpl':
+        return <InterfaceImplScreen navigate={navigate} />
+      case 'serverprogram':
+        return <ServerProgramScreen navigate={navigate} />
+      case 'wireframe':
+        return <WireFrameScreen navigate={navigate} />
       case 'exam':
         return <ExamScreen navigate={navigate} />;
       default:
@@ -545,7 +557,12 @@ function StudyMaterialScreen({ navigate }) {
     { id: 2, title: '제품소프트웨어 패키징', description: '지필평가', navigate: 'productsw' },
     { id: 3, title: '애플리케이션 테스트 관리', description: '지필평가', navigate: 'applicationtest' },
     { id: 4, title: '소프트웨어 개발 보안 구축', description: '지필평가', navigate: 'buildsw' },
-    { id: 5, title: 'SQL 응용', description: '학습 자료를 확인하세요', chapters: 10, completed: 7 },
+    { id: 5, title: '데이터 입출력 구현', description: '작업평가 - 제1과제(데이터베이스구현 실무)', navigate: 'datainput' },
+    { id: 6, title: 'SQL 응용', description: '작업평가 - 제1과제(데이터베이스구현 실무)', navigate: 'sqlapp' },
+    { id: 7, title: '통합구현', description: '작업평가 - 제2과제(인터페이스구현 실무)', navigate: 'implement' },
+    { id: 8, title: '인터페이스 구현', description: '작업평가 - 제2과제(인터페이스구현 실무)', navigate: 'interfaceimpl' },
+    { id: 9, title: '서버프로그램 구현', description: '작업평가 - 제3과제(서버프로그램 개발 실무)', navigate: 'serverprogram' },
+    { id: 10, title: '화면설계 구현', description: '작업평가 - 제4과제(화면설계 실무)', navigate: 'wireframe' },
   ];
 
   return (
@@ -647,7 +664,7 @@ function ApplicationTestScreen({ navigate }) {
       <div className="progress-section">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span className="progress-text">파일 다운로드</span>
-          <span className="progress-text"><a href="/ncs/LM2001020201_요구사항확인.pdf" download="LM2001020201_요구사항확인.pdf">다운로드</a></span>
+          <span className="progress-text"><a href="/ncs/LM2001020226_애플리케이션테스트관리.pdf" download="LM2001020226_애플리케이션테스트관리.pdf">다운로드</a></span>
         </div>    
       </div>
 
@@ -684,8 +701,8 @@ function BuildSoftworeDevScreen({ navigate }) {
     </>
   );
 }
-/*
-function RequirementsScreen({ navigate }) {
+
+function DataInputScreen({ navigate }) {
   return (
     <>
       <div className="header">
@@ -693,7 +710,7 @@ function RequirementsScreen({ navigate }) {
           <button className="back-button" onClick={() => navigate('study')}>
             <ArrowLeft size={20} />
           </button>
-          <h1>요구사항 확인</h1>
+          <h1>데이터 입출력 구현</h1>
           <div style={{ width: '60px' }}></div>
         </div>
       </div>
@@ -701,7 +718,7 @@ function RequirementsScreen({ navigate }) {
       <div className="progress-section">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span className="progress-text">파일 다운로드</span>
-          <span className="progress-text"><a href="/ncs/LM2001020201_요구사항확인.pdf" download="LM2001020201_요구사항확인.pdf">다운로드</a></span>
+          <span className="progress-text"><a href="/ncs/LM2001020205_데이터입출력구현.pdf" download="LM2001020205_데이터입출력구현.pdf">다운로드</a></span>
         </div>    
       </div>
 
@@ -712,7 +729,7 @@ function RequirementsScreen({ navigate }) {
   );
 }
 
-function RequirementsScreen({ navigate }) {
+function SqlApplicationScreen({ navigate }) {
   return (
     <>
       <div className="header">
@@ -720,7 +737,7 @@ function RequirementsScreen({ navigate }) {
           <button className="back-button" onClick={() => navigate('study')}>
             <ArrowLeft size={20} />
           </button>
-          <h1>요구사항 확인</h1>
+          <h1>SQL응용</h1>
           <div style={{ width: '60px' }}></div>
         </div>
       </div>
@@ -728,7 +745,7 @@ function RequirementsScreen({ navigate }) {
       <div className="progress-section">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span className="progress-text">파일 다운로드</span>
-          <span className="progress-text"><a href="/ncs/LM2001020201_요구사항확인.pdf" download="LM2001020201_요구사항확인.pdf">다운로드</a></span>
+          <span className="progress-text"><a href="/ncs/LM2001020414_SQL응용.pdf" download="LM2001020414_SQL응용.pdf">다운로드</a></span>
         </div>    
       </div>
 
@@ -739,7 +756,7 @@ function RequirementsScreen({ navigate }) {
   );
 }
 
-function RequirementsScreen({ navigate }) {
+function ImplementScreen({ navigate }) {
   return (
     <>
       <div className="header">
@@ -747,7 +764,7 @@ function RequirementsScreen({ navigate }) {
           <button className="back-button" onClick={() => navigate('study')}>
             <ArrowLeft size={20} />
           </button>
-          <h1>요구사항 확인</h1>
+          <h1>통합구현</h1>
           <div style={{ width: '60px' }}></div>
         </div>
       </div>
@@ -755,7 +772,7 @@ function RequirementsScreen({ navigate }) {
       <div className="progress-section">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span className="progress-text">파일 다운로드</span>
-          <span className="progress-text"><a href="/ncs/LM2001020201_요구사항확인.pdf" download="LM2001020201_요구사항확인.pdf">다운로드</a></span>
+          <span className="progress-text"><a href="/ncs/LM2001020206_통합구현.pdf" download="LM2001020206_통합구현.pdf">다운로드</a></span>
         </div>    
       </div>
 
@@ -766,7 +783,7 @@ function RequirementsScreen({ navigate }) {
   );
 }
 
-function RequirementsScreen({ navigate }) {
+function InterfaceImplScreen({ navigate }) {
   return (
     <>
       <div className="header">
@@ -774,7 +791,7 @@ function RequirementsScreen({ navigate }) {
           <button className="back-button" onClick={() => navigate('study')}>
             <ArrowLeft size={20} />
           </button>
-          <h1>요구사항 확인</h1>
+          <h1>인터페이스 구현</h1>
           <div style={{ width: '60px' }}></div>
         </div>
       </div>
@@ -782,7 +799,7 @@ function RequirementsScreen({ navigate }) {
       <div className="progress-section">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span className="progress-text">파일 다운로드</span>
-          <span className="progress-text"><a href="/ncs/LM2001020201_요구사항확인.pdf" download="LM2001020201_요구사항확인.pdf">다운로드</a></span>
+          <span className="progress-text"><a href="/ncs/LM2001020212_인터페이스구현.pdf" download="LM2001020212_인터페이스구현.pdf">다운로드</a></span>
         </div>    
       </div>
 
@@ -793,7 +810,7 @@ function RequirementsScreen({ navigate }) {
   );
 }
 
-function RequirementsScreen({ navigate }) {
+function ServerProgramScreen({ navigate }) {
   return (
     <>
       <div className="header">
@@ -801,7 +818,7 @@ function RequirementsScreen({ navigate }) {
           <button className="back-button" onClick={() => navigate('study')}>
             <ArrowLeft size={20} />
           </button>
-          <h1>요구사항 확인</h1>
+          <h1>서버프로그램 구현</h1>
           <div style={{ width: '60px' }}></div>
         </div>
       </div>
@@ -809,7 +826,7 @@ function RequirementsScreen({ navigate }) {
       <div className="progress-section">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span className="progress-text">파일 다운로드</span>
-          <span className="progress-text"><a href="/ncs/LM2001020201_요구사항확인.pdf" download="LM2001020201_요구사항확인.pdf">다운로드</a></span>
+          <span className="progress-text"><a href="/ncs/LM2001020211_서버프로그램구현.pdf" download="LM2001020211_서버프로그램구현.pdf">다운로드</a></span>
         </div>    
       </div>
 
@@ -819,7 +836,33 @@ function RequirementsScreen({ navigate }) {
     </>
   );
 }
-  */
+
+function WireFrameScreen({ navigate }) {
+  return (
+    <>
+      <div className="header">
+        <div className="detail-header">
+          <button className="back-button" onClick={() => navigate('study')}>
+            <ArrowLeft size={20} />
+          </button>
+          <h1>화면설계</h1>
+          <div style={{ width: '60px' }}></div>
+        </div>
+      </div>
+
+      <div className="progress-section">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <span className="progress-text">파일 다운로드</span>
+          <span className="progress-text"><a href="/ncs/LM2001020224_화면설계.pdf" download="LM2001020224_화면설계.pdf">다운로드</a></span>
+        </div>    
+      </div>
+
+      <div className="chapter-list">
+        
+      </div>
+    </>
+  );
+}
 
 // 시험 문제 화면
 function ExamScreen({ navigate }) {
